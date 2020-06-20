@@ -1,35 +1,18 @@
 // Code your solution in this file!
-const returnFirstTwoDrivers = (array) =>  {
-  const new_arr = []
-
-    new_arr.push(array[0])
-    new_arr.push(array[1])
-    return new_arr
+const returnFirstTwoDrivers = drivers => drivers.slice(0,2);
+const returnLastTwoDrivers = drivers => drivers.slice(-2);
 
 
-  // return anonymous
+const selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers];
+
+function createFareMultiplier(multiplier){
+    return function(fare){
+        return fare * multiplier;
+    }
 }
 
-const returnLastTwoDrivers = (array) => {
-  const new_arr = []
-  let removed = array.slice(-2)
-
-
-  return removed
-}
-
-selectingDrivers = [returnFirstTwoDrivers, returnLastTwoDrivers]
-
-const createFareMultiplier = function(value) {
-  return function(newValue) {
-    return newValue * value
-  }
-}
-
-const fareDoubler = createFareMultiplier(2)
-
-const fareTripler = createFareMultiplier(3)
-
-selectDifferentDrivers = (drivers, someFunction) =>  {
-  return someFunction(drivers)
+const fareDoubler = createFareMultiplier(2);
+const fareTripler = createFareMultiplier(3);
+const fetchSpecifiedDrivers = (drivers, func) => {
+    return func(drivers)
 }
